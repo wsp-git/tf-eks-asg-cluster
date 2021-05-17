@@ -24,7 +24,7 @@ terraform apply
 ## Tests
 Set correct kubectl context
 ```bash
-aws eks --region eu-west-1 update-kubeconfig --name eks_tz-eks-cluster-1705v1
+aws eks --region eu-west-1 update-kubeconfig --name tz-eks-cluster-1705v1
 ```
 After that begin testing:
 ```bash
