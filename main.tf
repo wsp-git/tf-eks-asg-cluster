@@ -113,22 +113,6 @@ resource "helm_release" "cluster_autoscale" {
   values = [
     "${file("cluster-autoscaler-chart-values.yaml")}"
   ]
-  
-  set {
-    name  = "awsRegion"
-    value = var.region
-  }
-  
-  set {
-    name  = "rbac.serviceAccountAnnotations.eks\\.amazonaws\\.com/role-arn"
-    value = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/cluster-autoscaler"
-    type  = "string"
-  }
-
-  set {
-    name  = "autoDiscovery.clusterName"
-    value = local.cluster_name
-  }
 
   depends_on = [
     module.eks
