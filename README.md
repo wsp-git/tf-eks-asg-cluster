@@ -14,6 +14,10 @@ Or use the following aws cli if you got mfa:
 ```bash
 aws sts get-session-token --serial-number arn:aws:iam::<account id>:mfa/<user> --token-code <mfa code>
 ```
+Then change to your account ID [HERE](https://github.com/wsp-git/tf-eks-asg-cluster/blob/6afc7c66f310b1719fc88b89165835bf0258058d/cluster-autoscaler-chart-values.yaml#L10)
+
+// I have found error that needs to be fixed to get rid of hard-coded account number
+
 ## Usage
 ```python
 terraform init
